@@ -6,4 +6,5 @@
 - `forEach`
 - `map`
 - `reduce`
+- `reduceRight`
 - `some`
