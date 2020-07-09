@@ -5,3 +5,4 @@
 - `findIndex`
 - `forEach`
 - `map`
+- `reduce`
