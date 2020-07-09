@@ -2,3 +2,4 @@
 - `every`
 - `filter`
 - `find`
+- `findIndex`
