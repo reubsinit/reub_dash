@@ -8,7 +8,8 @@ function flat(array, depth) {
       const isArray = Array.isArray(val);
       if (isArray && level == depth || !isArray) {
         result.push(val);
-      } else if (level++ < depth) {
+      } else {
+        level++
         flat(val);
         level--;
       }
