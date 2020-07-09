@@ -5,6 +5,7 @@
 - `findIndex`
 - `forEach`
 - `map`
+- `once`
 - `reduce`
 - `reduceRight`
 - `some`
