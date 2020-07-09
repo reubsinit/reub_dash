@@ -3,4 +3,5 @@
 - `filter`
 - `find`
 - `findIndex`
-- 'forEach
+- `forEach`
+- `map`
