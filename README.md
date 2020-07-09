@@ -4,6 +4,7 @@
 - `find`
 - `findIndex`
 - `flat`
+- `flatMap`
 - `forEach`
 - `map`
 - `once`
