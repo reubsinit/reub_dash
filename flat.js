@@ -6,11 +6,11 @@ function flat(array, depth) {
     for (let i = 0; i < array.length; i++) {
       const val = array[i];
       const isArray = Array.isArray(val);
-      debugger;
       if (isArray && level == depth || !isArray) {
         result.push(val);
       } else if (level++ < depth) {
         flat(val);
+        level--;
       }
     }
   }
