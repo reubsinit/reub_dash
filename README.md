@@ -3,6 +3,7 @@
 - `filter`
 - `find`
 - `findIndex`
+- `flat`
 - `forEach`
 - `map`
 - `once`
