@@ -1,0 +1,23 @@
+{
+  "name": "reub_dash",
+  "version": "1.0.0",
+  "description": "- `every` - `filter` - `find` - `findIndex` - `flat` - `flatMap` - `forEach` - `map` - `once` - `reduce` - `reduceRight` - `some`",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reubsinit/reub_dash.git"
+  },
+  "author": "Reuben Wilson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/reubsinit/reub_dash/issues"
+  },
+  "homepage": "https://github.com/reubsinit/reub_dash#readme",
+  "devDependencies": {
+    "eslint": "^7.4.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}
