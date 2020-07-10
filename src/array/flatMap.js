@@ -1,3 +1,4 @@
+import flat from './flat';
 /**
  * flatMap callback.
  *
