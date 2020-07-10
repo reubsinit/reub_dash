@@ -1,5 +1,21 @@
-function forEach(array, cb) {
+/**
+ * ForEach callback.
+ *
+ * @callback forEachCallback
+ * @param {any} element - The current element being processed in the array.
+ * @param {number} [idx] - The index of the current element.
+ * @param {array} [array] - The array being iterated on.
+ */
+
+/**
+ * Executes a provided function once for each array element.
+ * @param {array} array - The array to iterate over.
+ * @param {forEachCallback} callback - Function to execute on each element.
+ * @return {undefined}
+ */
+function forEach(array, callback) {
   for (let i = 0; i < array.length; i++) {
-    cb(array[i], i, array)
+    callback(array[i], i, array);
   }
 }
+export default forEach;
