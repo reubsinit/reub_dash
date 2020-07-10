@@ -1,3 +1,5 @@
+import forEachReturn from '../../src/array/forEachReturn';
+
 /**
  * findIndex callback.
  *
@@ -18,12 +20,13 @@
  * the test. Otherwise, -1.
  */
 function findIndex(array, callback) {
-  for (let i = 0; i < array.length; i++) {
-    if (callback(array[i], i, array)) {
-      return i;
+  /* eslint-disable-next-line require-jsdoc */
+  function each(ele, idx, array) {
+    if (callback(ele, idx, array)) {
+      return idx;
     }
   }
-  return -1;
+  return forEachReturn(array, each) ?? -1;
 }
 
 export default findIndex;
