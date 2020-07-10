@@ -14,7 +14,8 @@
  * @return {undefined}
  */
 function forEach(array, callback) {
-  for (let i = 0; i < array.length; i++) {
+  const initialLength = array.length;
+  for (let i = 0; i < initialLength && i < array.length; i++) {
     callback(array[i], i, array);
   }
 }
