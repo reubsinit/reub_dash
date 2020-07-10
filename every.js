@@ -3,8 +3,8 @@
  *
  * @callback everyCallback
  * @param {any} element - The current element being processed in the array.
- * @param {number} idx - The index of the current element.
- * @param {array} array - The array being iterated on.
+ * @param {number} [idx] - The index of the current element.
+ * @param {array} [array] - The array being iterated on.
  */
 
 /**
