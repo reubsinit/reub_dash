@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "- `every` - `filter` - `find` - `findIndex` - `flat` - `flatMap` - `forEach` - `map` - `once` - `reduce` - `reduceRight` - `some`",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --config jestconfig.json"
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,14 @@
   },
   "homepage": "https://github.com/reubsinit/reub_dash#readme",
   "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "babel-jest": "^26.1.0",
     "eslint": "^7.4.0",
-    "eslint-config-google": "^0.14.0"
-  }
+    "eslint-config-google": "^0.14.0",
+    "jest": "^26.1.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+ }
 }
