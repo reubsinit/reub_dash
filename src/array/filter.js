@@ -18,7 +18,8 @@
  */
 function filter(array, callback) {
   const result = [];
-  for (let i = 0; i < array.length; i++) {
+  const initialLength = array.length;
+  for (let i = 0; i < initialLength && i < array.length; i++) {
     if (callback(array[i], i, array)) {
       result.push(array[i]);
     }
