@@ -1,5 +1,5 @@
 /**
- * FlatMap callback.
+ * flatMap callback.
  *
  * @callback flatMapCallback
  * @param {any} element - The current element being processed in the array.

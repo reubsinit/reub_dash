@@ -1,5 +1,5 @@
 /**
- * Every callback.
+ * every callback.
  *
  * @callback everyCallback
  * @param {any} element - The current element being processed in the array.

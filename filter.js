@@ -1,5 +1,5 @@
 /**
- * Filter callback.
+ * filter callback.
  *
  * @callback filterCallback
  * @param {any} element - The current element being processed in the array.

@@ -1,5 +1,5 @@
 /**
- * ForEach callback.
+ * forEach callback.
  *
  * @callback forEachCallback
  * @param {any} element - The current element being processed in the array.

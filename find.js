@@ -1,5 +1,5 @@
 /**
- * Find callback.
+ * find callback.
  *
  * @callback findCallback
  * @param {any} element - The current element being processed in the array.
