@@ -1,3 +1,4 @@
+import reduce from './reduce';
 /**
  * reduce callback.
  *
@@ -22,15 +23,7 @@
  * @return {any} The single value that results from the reduction.
  */
 function reduceRight(array, callback, initial) {
-  let i = initial ? array.length - 1 : array.length - 2;
-  // need to explicitly check initial for undefined here
-  // because of boolean coercion - when initial is 0 for instance
-  let acc = initial == undefined ? array[array.length - 1] : initial;
-  while (i > -1) {
-    acc = callback(acc, array[i], i, array);
-    i--;
-  }
-  return acc;
+  return reduce(array.reverse(), callback, initial);
 }
 
 export default reduceRight;
