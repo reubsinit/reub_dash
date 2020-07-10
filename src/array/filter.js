@@ -1,3 +1,4 @@
+import forEach from '../../src/array/forEach';
 /**
  * filter callback.
  *
@@ -18,12 +19,11 @@
  */
 function filter(array, callback) {
   const result = [];
-  const initialLength = array.length;
-  for (let i = 0; i < initialLength && i < array.length; i++) {
-    if (callback(array[i], i, array)) {
-      result.push(array[i]);
+  forEach(array, function each(ele, idx, array) {
+    if (callback(ele, idx, array)) {
+      result.push(ele);
     }
-  }
+  });
   return result;
 }
 
