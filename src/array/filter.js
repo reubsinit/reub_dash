@@ -1,4 +1,3 @@
-import forEach from '../../src/array/forEach';
 /**
  * filter callback.
  *

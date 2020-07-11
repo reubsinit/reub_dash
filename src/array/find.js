@@ -1,5 +1,3 @@
-import _for from './_for';
-
 /**
  * find callback.
  *
