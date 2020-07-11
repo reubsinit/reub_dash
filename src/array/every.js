@@ -1,4 +1,3 @@
-import forEachReturn from '../../src/array/forEachReturn';
 /**
  * every callback.
  *
@@ -17,13 +16,14 @@ import forEachReturn from '../../src/array/forEachReturn';
  *  for every array element. Otherwise, `false`.
  */
 function every(array, callback) {
-  /* eslint-disable-next-line require-jsdoc */
-  function each(ele, idx, array) {
-    if (!callback(ele, idx, array)) {
+  const initialLength = array.length;
+
+  for (let i = 0; i < initialLength && i < array.length; i++) {
+    if (!callback(array[i], i, array)) {
       return false;
     }
   }
-  return forEachReturn(array, each) ?? true;
+  return true;
 }
 
 export default every;

@@ -18,12 +18,14 @@ import forEach from '../../src/array/forEach';
  * elements pass the test, an empty array will be returned.
  */
 function filter(array, callback) {
+  const initialLength = array.length;
   const result = [];
-  forEach(array, function each(ele, idx, array) {
-    if (callback(ele, idx, array)) {
-      result.push(ele);
+
+  for (let i = 0; i < initialLength && i < array.length; i++) {
+    if (callback(array[i], i, array)) {
+      result.push(array[i]);
     }
-  });
+  }
   return result;
 }
 

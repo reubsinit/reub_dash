@@ -1,4 +1,4 @@
-import forEachReturn from '../../src/array/forEachReturn';
+import _for from './_for';
 
 /**
  * find callback.
@@ -19,13 +19,12 @@ import forEachReturn from '../../src/array/forEachReturn';
  * the provided testing function. Otherwise, undefined is returned.
  */
 function find(array, callback) {
-  /* eslint-disable-next-line require-jsdoc */
-  function each(ele, idx, array) {
-    if (callback(ele, idx, array)) {
-      return ele;
+  for (let i = 0; i < array.length; i++) {
+    if (callback(array[i], i, array)) {
+      return array[i];
     }
   }
-  return forEachReturn(array, each);
+  return undefined;
 }
 
 export default find;
