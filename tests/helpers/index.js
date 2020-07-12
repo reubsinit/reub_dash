@@ -19,9 +19,12 @@ export function compare(fn, values, options = {}) {
     }
     return result;
   }
-  // Got an issue in the above function with object references
-  const reub_dash = rd[fn](!options.mutate ? values : [...values], ...args());
-  const native = values[fn](...args());
+
+  // TODO: Investigate array mutations =\
+  const reub_dash = rd[fn]([...values], ...args());
+  const native = [...values][fn](...args());
+
+  console.log(`rd: ${JSON.stringify(reub_dash)}\nnative: ${JSON.stringify(native)}`);
 
   expect(reub_dash).toEqual(native);
 }
