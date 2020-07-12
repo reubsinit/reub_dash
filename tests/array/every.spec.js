@@ -20,6 +20,7 @@ describe('every', () => {
       arr[index+1] -= 1;
       return elem < 2;
     }
+
     compare('every', [1, 2, 3, 4], cb, true);
   });
 
@@ -28,6 +29,7 @@ describe('every', () => {
       arr[index+1] -= 1;
       return elem < 2;
     }
+
     compare('every', [1, 2, 3, 4], cb, true);
   });
 
@@ -36,6 +38,7 @@ describe('every', () => {
       arr.pop();
       return elem < 4;
     }
+
     compare('every', [1, 2, 3, 4], cb, true);
   });
 });

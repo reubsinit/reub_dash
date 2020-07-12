@@ -1,5 +1,7 @@
 import rd from '../../src';
 
 export function compare(fn, values, cb, mutate = false) {
-  expect(rd[fn](!mutate ? values : [...values], cb)).toEqual(values[fn](cb));
+  const reub_dash = rd[fn](!mutate ? values : [...values], cb);
+  const native = values[fn](cb);
+  expect(reub_dash).toEqual(native);
 }
