@@ -6,7 +6,7 @@
  * nested array structure should be flattened. Defaults to 1.
  * @return {array} A new array with the sub-array elements concatenated into it.
  */
-export function flat(array, depth = 1) {
+function flat(array, depth = 1) {
   const result = [];
   let level = 0;
   /**
