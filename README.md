@@ -3,6 +3,8 @@ My own implementation of some array methods and various functions inspired by th
 
 Documentation heavily borrowed from [MDN](developer.mozilla.org).
 
+Tests are comparing the output of my own implementations to the output of the Array.prototype methods.
+
 ### Array
 - `every`
 - `filter`
