@@ -16,15 +16,15 @@ describe('reduce', () => {
       return accumulator + currentValue;
     }
 
-    compare('reduce', [1, 2, 3, 4], {cb, args: 10});
+    compare('reduce', [1, 2, 3, 4], {cb, arg: 10});
   });
 
   it('should flatten an array', () => {
     function cb(accumulator, currentValue) {
       return accumulator.concat(currentValue);
     };
-    debugger;
-    compare('reduce', [[0, 1], [2, 3], [4, 5]], {cb, args: []});
+
+    compare('reduce', [[0, 1], [2, 3], [4, 5]], {cb, arg: []});
   });
 
   it('should count instances of values in an object', () => {
@@ -37,7 +37,7 @@ describe('reduce', () => {
       return allNames;
     }
 
-    compare('reduce', ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'], {cb, args: {}});
+    compare('reduce', ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'], {cb, arg: {}});
   });
 
   it('should group objects by a property', () => {
@@ -58,6 +58,6 @@ describe('reduce', () => {
       {name: 'Jane', age: 20},
     ];
 
-    compare('reduce', people, {cb: cb('age'), args: {}, mutate: true});
+    compare('reduce', people, {cb: cb('age'), arg: {}, mutate: true});
   });
 });

@@ -16,6 +16,6 @@ describe('reduceRight', () => {
       return a.concat(b);
     }
 
-    compare('reduceRight', [[0, 1], [2, 3], [4, 5]], {cb, args: []});
+    compare('reduceRight', [[0, 1], [2, 3], [4, 5]], {cb, arg: []});
   });
 });
