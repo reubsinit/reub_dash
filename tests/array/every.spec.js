@@ -1,4 +1,4 @@
-import every from '../../src/array/every';
+import {compare} from '../helpers';
 
 /* eslint-disable require-jsdoc */
 
@@ -7,24 +7,12 @@ describe('every', () => {
     return element >= 10;
   }
 
-  let rd;
-  let nativeEvery;
-  let numbers;
-
   it('should confirm every element >= 10', () => {
-    numbers = [12, 54, 18, 130, 44];
-    rd = every(numbers, isBigEnough);
-    nativeEvery = numbers.every(isBigEnough);
-
-    expect(rd).toEqual(nativeEvery);
+    compare('every', [12, 54, 18, 130, 44], isBigEnough);
   });
 
   it('should deny every element >= 10', () => {
-    numbers = [12, 5, 8, 130, 44];
-    rd = every(numbers, isBigEnough);
-    nativeEvery = numbers.every(isBigEnough);
-
-    expect(rd).toEqual(nativeEvery);
+    compare('every', [12, 5, 8, 130, 44], isBigEnough);
   });
 
   it('should modify array items and return true', () => {
@@ -32,10 +20,7 @@ describe('every', () => {
       arr[index+1] -= 1;
       return elem < 2;
     }
-    rd = every([1, 2, 3, 4], cb);
-    nativeEvery = [1, 2, 3, 4].every(cb);
-
-    expect(rd).toEqual(nativeEvery);
+    compare('every', [1, 2, 3, 4], cb, true);
   });
 
   it('should append new array items and return false', () => {
@@ -43,10 +28,7 @@ describe('every', () => {
       arr[index+1] -= 1;
       return elem < 2;
     }
-    rd = every([1, 2, 3, 4], cb);
-    nativeEvery = [1, 2, 3, 4].every(cb);
-
-    expect(rd).toEqual(nativeEvery);
+    compare('every', [1, 2, 3, 4], cb, true);
   });
 
   it('should delete array items and return true', () => {
@@ -54,9 +36,6 @@ describe('every', () => {
       arr.pop();
       return elem < 4;
     }
-    rd = every([1, 2, 3, 4], cb);
-    nativeEvery = [1, 2, 3, 4].every(cb);
-
-    expect(rd).toEqual(nativeEvery);
+    compare('every', [1, 2, 3, 4], cb, true);
   });
 });

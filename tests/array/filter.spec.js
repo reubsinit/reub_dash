@@ -1,28 +1,23 @@
-import filter from '../../src/array/filter';
+import {compare} from '../helpers';
 
 /* eslint-disable require-jsdoc */
 const words = ['spray', 'limit', 'exuberant', 'destruction', 'elite', 'present'];
-
-function testFunction(toFilter, cb, mutate = false) {
-  const rd = filter(!mutate ? toFilter : [...toFilter], cb);
-  const nativeFilter = toFilter.filter(cb);
-
-  expect(rd).toEqual(nativeFilter);
-}
 
 describe('filter', () => {
   it('should filter each word by word.length > 6', () => {
     function greaterThan6(word) {
       return word.length > 6;
     }
-    testFunction(words, greaterThan6);
+
+    compare('filter', words, greaterThan6);
   });
 
   it('should filter each number >= 10', () => {
     function isBigEnough(value) {
       return value >= 10;
     }
-    testFunction([12, 5, 8, 130, 44], isBigEnough);
+
+    compare('filter', [12, 5, 8, 130, 44], isBigEnough);
   });
 
   it('should filter all prime numers', () => {
@@ -34,7 +29,8 @@ describe('filter', () => {
       }
       return num > 1;
     }
-    testFunction([-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], isPrime);
+
+    compare('filter', [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], isPrime);
   });
 
   it('should filter invalid entries from JSON', () => {
@@ -57,7 +53,7 @@ describe('filter', () => {
       {id: 'undefined'},
     ];
 
-    testFunction(toFilter, filterByID);
+    compare('filter', toFilter, filterByID);
   });
 
   it('should search an arry', () => {
@@ -67,7 +63,7 @@ describe('filter', () => {
       };
     }
 
-    testFunction(['apple', 'banana', 'grapes', 'mango', 'orange'], cb('an'));
+    compare('filter', ['apple', 'banana', 'grapes', 'mango', 'orange'], cb('an'));
   });
 
   it('should modify array items', () => {
@@ -76,7 +72,7 @@ describe('filter', () => {
       return word.length < 6;
     }
 
-    testFunction(words, cb, true);
+    compare('filter', words, cb, true);
   });
 
   it('should append new array items', () => {
@@ -85,7 +81,7 @@ describe('filter', () => {
       return word.length < 6;
     }
 
-    testFunction(words, cb, true);
+    compare('filter', words, cb, true);
   });
 
   it('should delete array items', () => {
@@ -94,6 +90,6 @@ describe('filter', () => {
       return word.length < 6;
     }
 
-    testFunction(words, cb, true);
+    compare('filter', words, cb, true);
   });
 });
