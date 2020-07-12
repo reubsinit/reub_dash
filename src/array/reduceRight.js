@@ -23,7 +23,7 @@ import reduce from './reduce';
  * @return {any} The single value that results from the reduction.
  */
 function reduceRight(array, callback, initial) {
-  return reduce(array.reverse(), callback, initial);
+  return reduce([...array].reverse(), callback, initial);
 }
 
 export default reduceRight;

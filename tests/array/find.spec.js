@@ -8,7 +8,7 @@ describe('find', () => {
       return val > 10;
     }
 
-    compare('find', [5, 12, 8, 130, 44], cb);
+    compare('find', [5, 12, 8, 130, 44], {cb});
   });
 
   it('should find an object in an array by one of its properties', () => {
@@ -22,7 +22,7 @@ describe('find', () => {
       {name: 'cherries', quantity: 5},
     ];
 
-    compare('find', inventory, isCherries);
+    compare('find', inventory, {cb: isCherries});
   });
 
   it('should find the first prime number', () => {
@@ -36,6 +36,6 @@ describe('find', () => {
       return element > 1;
     }
 
-    compare('find', [4, 6, 8, 12], isPrime);
+    compare('find', [4, 6, 8, 12], {cb: isPrime});
   });
 });

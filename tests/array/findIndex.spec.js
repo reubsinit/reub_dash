@@ -13,7 +13,7 @@ describe('findIndex', () => {
       return num > 1;
     }
 
-    compare('findIndex', [4, 6, 8, 9, 12], isPrime);
+    compare('findIndex', [4, 6, 8, 9, 12], {cb: isPrime});
   });
 
   it('should not find index of number', () => {
@@ -21,6 +21,6 @@ describe('findIndex', () => {
       return num == 89;
     }
 
-    compare('findIndex', [4, 6, 8, 9, 12], cb);
+    compare('findIndex', [4, 6, 8, 9, 12], {cb});
   });
 });

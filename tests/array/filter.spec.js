@@ -9,7 +9,7 @@ describe('filter', () => {
       return word.length > 6;
     }
 
-    compare('filter', words, greaterThan6);
+    compare('filter', words, {cb: greaterThan6});
   });
 
   it('should filter each number >= 10', () => {
@@ -17,7 +17,7 @@ describe('filter', () => {
       return value >= 10;
     }
 
-    compare('filter', [12, 5, 8, 130, 44], isBigEnough);
+    compare('filter', [12, 5, 8, 130, 44], {cb: isBigEnough});
   });
 
   it('should filter all prime numers', () => {
@@ -30,7 +30,7 @@ describe('filter', () => {
       return num > 1;
     }
 
-    compare('filter', [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], isPrime);
+    compare('filter', [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], {cb: isPrime});
   });
 
   it('should filter invalid entries from JSON', () => {
@@ -53,7 +53,7 @@ describe('filter', () => {
       {id: 'undefined'},
     ];
 
-    compare('filter', toFilter, filterByID);
+    compare('filter', toFilter, {cb: filterByID});
   });
 
   it('should search an arry', () => {
@@ -63,7 +63,7 @@ describe('filter', () => {
       };
     }
 
-    compare('filter', ['apple', 'banana', 'grapes', 'mango', 'orange'], cb('an'));
+    compare('filter', ['apple', 'banana', 'grapes', 'mango', 'orange'], {cb: cb('an')});
   });
 
   it('should modify array items', () => {
@@ -72,7 +72,7 @@ describe('filter', () => {
       return word.length < 6;
     }
 
-    compare('filter', words, cb, true);
+    compare('filter', words, {cb, mutate: true});
   });
 
   it('should append new array items', () => {
@@ -81,7 +81,7 @@ describe('filter', () => {
       return word.length < 6;
     }
 
-    compare('filter', words, cb, true);
+    compare('filter', words, {cb, mutate: true});
   });
 
   it('should delete array items', () => {
@@ -90,6 +90,6 @@ describe('filter', () => {
       return word.length < 6;
     }
 
-    compare('filter', words, cb, true);
+    compare('filter', words, {cb, mutate: true});
   });
 });

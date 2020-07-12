@@ -8,11 +8,11 @@ describe('every', () => {
   }
 
   it('should confirm every element >= 10', () => {
-    compare('every', [12, 54, 18, 130, 44], isBigEnough);
+    compare('every', [12, 54, 18, 130, 44], {cb: isBigEnough});
   });
 
   it('should deny every element >= 10', () => {
-    compare('every', [12, 5, 8, 130, 44], isBigEnough);
+    compare('every', [12, 5, 8, 130, 44], {cb: isBigEnough});
   });
 
   it('should modify array items and return true', () => {
@@ -21,7 +21,7 @@ describe('every', () => {
       return elem < 2;
     }
 
-    compare('every', [1, 2, 3, 4], cb, true);
+    compare('every', [1, 2, 3, 4], {cb, mutate: true});
   });
 
   it('should append new array items and return false', () => {
@@ -30,7 +30,7 @@ describe('every', () => {
       return elem < 2;
     }
 
-    compare('every', [1, 2, 3, 4], cb, true);
+    compare('every', [1, 2, 3, 4], {cb, mutate: true});
   });
 
   it('should delete array items and return true', () => {
@@ -39,6 +39,6 @@ describe('every', () => {
       return elem < 4;
     }
 
-    compare('every', [1, 2, 3, 4], cb, true);
+    compare('every', [1, 2, 3, 4], {cb, mutate: true});
   });
 });
