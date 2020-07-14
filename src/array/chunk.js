@@ -1,8 +1,15 @@
+/**
+ * Creates an array of elements split into chunks the length of size. If array
+ * can't be chunked evenly, the final chunk will be the remaining elements.
+ * @param {array} array - The array to chunk.
+ * @param {number} size - The numbers of elements per chunk.
+ * @return {array} A new array of chunks.
+ */
 function chunk(array, size = 1) {
   let i = 0;
   const result = [];
 
-  (function chunk() {
+  (function chunkInner() {
     let count = 0;
     const chunk = [];
     while (i < array.length && count++ < size) {
@@ -10,11 +17,12 @@ function chunk(array, size = 1) {
     }
     result.push(chunk);
     if (i < array.length) {
-      chunk();
+      chunkInner();
     }
   })();
 
   return result;
 }
+
 
 export default chunk;
